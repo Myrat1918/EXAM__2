@@ -12,7 +12,7 @@
             <ul class="navbar-nav ms-auto">
 
                 <li class="nav-item">
-                    <a href="{{ url('/') }}" class="nav-link text-secondary">Baş Sahypa</a>
+                    <a href="{{ url('home.home') }}" class="nav-link text-secondary">Baş Sahypa</a>
                 </li>
 
                 <li class="nav-item">
@@ -21,25 +21,6 @@
                 <li class="nav-item">
                     <a href="{{ route('posts.index') }}" class="nav-link text-secondary">Postlar</a>
                 </li>
-
-                @guest
-                    <li class="nav-item border-start ps-3 ms-3">
-                        <a href="{{ route('login') }}" class="nav-link text-success fw-semibold">Admin Giriş</a>
-                    </li>
-                @else
-                    <li class="nav-item border-start ps-3 ms-3">
-                        <a href="{{ url('/admin/dashboard') }}" class="nav-link text-danger fw-semibold">Admin Panel</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <form action="{{ route('logout') }}" method="POST" class="d-inline-block ms-3">
-                            @csrf
-                            <button type="submit" class="btn btn-sm btn-link text-muted p-0 m-0 align-baseline text-decoration-none small hover:text-danger" style="margin-top: 2px;">
-                                (Çykmak)
-                            </button>
-                        </form>
-                    </li>
-                @endguest
             </ul>
         </div>
     </div>

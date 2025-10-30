@@ -11,19 +11,13 @@
 
     <style>
 
-        body {
 
-            background-image: url('{{ asset('images/football-bg.jpg') }}');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: #fff;
-        }
+        body {
+        background-image: url({{ asset('images/football/bg.jpg') }});
+
+    }`
+
+
 
 
         .content-wrapper {
@@ -55,8 +49,8 @@
 
 </head>
 
-<body class="bg-dark">
-    <div class="content-wrapper">
+<body class="bg-dark mt-5 pt-5">
+    <div class="content-wrapper mt-5">
         <div class="text-center">
 
             <div class="mb-4">
@@ -69,18 +63,20 @@
 
             <div class="h1 fw-bold mb-5">
                 <div id="wrapper" class="text-white">
-                    
+
                     <span id="ara">TÄZELIK</span>
                 </div>
                 <h3 class="text-light">Futbol Täzeliklerini Satyn Al we Gör!</h3>
+
+                <div class="row justify-content-center ">
+                    <div class="col-6">
+                        <a href="{{ route('home.home') }}" class="btn btn-primary w-100 py-3">
+                            Giris
+                        </a>
+                    </div>
+                </div>
             </div>
 
-            <a href="{{ route('login') }}" class="btn btn-success btn-lg">
-                {{ __('auth.login') }} <i class="bi-box-arrow-in-right"></i>
-            </a>
-            <a href="{{ route('register') }}" class="btn btn-outline-light btn-lg ms-3">
-                {{ __("auth.register") }} <i class="bi-person-plus"></i>
-            </a>
         </div>
     </div>
 

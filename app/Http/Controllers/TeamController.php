@@ -13,9 +13,14 @@ class TeamController extends Controller
 
     public function index()
     {
-        $teams = Team::latest()->paginate(10);
+        $teams = Team::get();
 
-      
+    return view('team.index')->with(
+            [
+                'teams' =>$teams
+            ]
+        );
+
 
     }
 

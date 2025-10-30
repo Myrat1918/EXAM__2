@@ -24,3 +24,4 @@ class LocalMiddleware
         return $next($request);
     }
 }
+

@@ -13,15 +13,12 @@ class User extends Authenticatable
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
-    protected $fillable = [
-        'name',
-        'surname',
-        'username',
-        'email',
-        'bio',
-        'profile_picture',
-        'password',
-    ];
+protected $fillable = [
+    'name',
+    'username',
+    'password',
+];
+
 
     protected $hidden = [
         'password',

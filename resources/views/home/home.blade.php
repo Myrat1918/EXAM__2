@@ -21,7 +21,7 @@
                         </div>
 
                         <div class="mt-auto pt-3 border-top">
-                             <a href="{{ route('posts.show', $post->id) }}" class="btn btn-sm btn-outline-primary fw-semibold">
+                             <a href="{{ route('posts.index', $post->id) }}" class="btn btn-sm btn-outline-primary fw-semibold">
                                 Doly Oka
                             </a>
                         </div>

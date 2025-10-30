@@ -13,10 +13,11 @@ return new class extends Migration
     {
         Schema::create('players', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('team_id')->constrained()->cascadeOnDelete();
             $table->string('first_name', 50);
             $table->string('last_name', 50);
             $table->string('country', 50);
-            $table->string('position', 20); // e.g., 'Goalkeeper', 'Defender', 'Midfielder', 'Forward'
+            $table->string('position', 20);
             $table->timestamps();
         });
     }

@@ -3,23 +3,30 @@
 @section('title', 'Iň Soňky Futbol Täzelikleri')
 
 @section('content')
-    <h1 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-2">Iň Soňky Täzelikler 📰</h1>
+    <h1 class="h3 fw-bold text-dark mb-4 border-bottom pb-2">Iň Soňky Täzelikler 📰</h1>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        @forelse($posts as $post)
-            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+     <div class="row row-cols-1 row-cols-md-2 g-4">
+            @foreach ($posts as $post)
+                <div class="col">
+                    <div class="card h-100 shadow-sm p-4 border-0">
+                        <div class="h5 text-secondary pb-2">
+                            <i class="bi-person-fill pe-2 h5 text-secondary"></i> {{ $post->user->firstname }}
+                            {{ $post->user->lastname }}
+                        </div>
+                        <h4 class="card-title fs-5">
+                            <span class="fw-bold">Title: </span> {{ $post->title }}
+                        </h4>
+                        <div class="text-primary small mb-3">
+                            <span class="fw-bold">Category: </span> {{ $post->category->name }}
+                        </div>
 
-
-                <h2 class="text-xl font-semibold text-gray-900 mb-2">
-                    <a href="{{ route('posts.index', $post->slug) }}" class="hover:text-blue-600">
-                        {{ $post->title }}
-                    </a>
-                </h2>
-                <p class="text-sm text-gray-500 mb-3">{{ $post->published_at->format('Y/m/d') }}</p>
-                <p class="text-gray-600">{{ Str::limit(strip_tags($post->content), 100) }}</p>
-            </div>
-        @empty
-            <p class="text-gray-500 col-span-3">Häzirlikçe hiç hili täzelik ýok.</p>
-        @endforelse
-    </div>
+                        <div class="mt-auto pt-3 border-top">
+                             <a href="{{ route('posts.show', $post->id) }}" class="btn btn-sm btn-outline-primary fw-semibold">
+                                Doly Oka
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
 @endsection

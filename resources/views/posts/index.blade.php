@@ -3,22 +3,28 @@
 @section('title', $post->title)
 
 @section('content')
-    <div class="bg-white p-8 rounded-lg shadow-lg">
-        <h1 class="text-4xl font-extrabold text-gray-900 mb-4">{{ $post->title }}</h1>
+    <div class="card shadow-lg p-4 p-md-5 mb-5 bg-white">
 
-        <div class="text-sm text-gray-500 mb-6 flex space-x-4">
-            <span>📅 {{ $post->published_at->format('Y/m/d H:i') }}</span>
-            <span class="font-semibold text-blue-600">{{ $post->category->name ?? 'Kategoriýasyz' }}</span>
+        <h1 class="display-5 fw-bolder text-dark mb-4">{{ $post->title }}</h1>
+
+        <div class="small text-muted mb-4 d-flex">
+            <span class="me-4">
+                <i class="bi bi-calendar"></i> {{ $post->published_at->format('Y/m/d H:i') }}
+            </span>
+            <span class="fw-semibold text-primary">
+                <i class="bi bi-tag-fill"></i> {{ $post->category->name ?? 'Kategoriýasyz' }}
+            </span>
         </div>
 
-      
 
-        <div class="prose max-w-none text-gray-700 leading-relaxed border-t pt-6">
+        <div class="text-body border-top pt-4 fs-5">
             {!! nl2br(e($post->content)) !!}
         </div>
 
-        <div class="mt-8 pt-4 border-t">
-            <a href="{{ url('/') }}" class="text-blue-600 hover:text-blue-800 font-medium">← Baş sahypa dolan</a>
+        <div class="mt-4 pt-3 border-top">
+            <a href="{{ route('home') }}" class="btn btn-outline-primary btn-sm fw-semibold">
+                ← Baş sahypa dolan
+            </a>
         </div>
     </div>
 @endsection

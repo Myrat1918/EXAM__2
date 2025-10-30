@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('teams', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 100)->unique(); // e.g., 'Manchester United', 'Real Madrid'
+            $table->string('name', 100)->unique(); 
             $table->string('city', 50);
             $table->string('country', 100);
             $table->string('manager_name', 100)->nullable();

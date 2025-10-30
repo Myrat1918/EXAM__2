@@ -14,11 +14,23 @@ class HomeController extends Controller
     $categories = Category::withCount("posts")->get();
     $posts = Post::latest()->limit(8)->get();
 
-    return view('home.home')-> with([
+    return view('client.home.home')-> with([
         'users' => $users,
         'categories' => $categories,
         'posts' => $posts
     ]);
+    }
+
+
+
+      public function locale($locale)
+    {
+        $locale = in_array($locale, ['tm', 'ru']) ? $locale : 'en';
+        session()->put('locale', $locale);
+
+        return redirect()->back();
+    }
+
 }
-}
+
 

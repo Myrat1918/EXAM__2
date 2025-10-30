@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Team;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,7 +19,8 @@ class PlayerFactory extends Factory
     {
         $positions = ['Forward', 'Midfielder', 'Defender', 'Goalkeeper'];
 
-        // A diverse list of footballing nations
+        $team_id = Team::inRandomOrder()->first();
+
         $countries = [
             'Brazil', 'Argentina', 'France', 'England', 'Germany',
             'Spain', 'Portugal', 'Netherlands', 'Italy', 'USA',
@@ -26,6 +28,8 @@ class PlayerFactory extends Factory
         ];
 
         return [
+
+            'team_id'=> $team_id,
 
             'first_name' => fake()->firstName(),
 

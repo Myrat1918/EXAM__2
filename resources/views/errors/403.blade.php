@@ -1,19 +1,25 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>403 | Forbidden</title>
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/bootstrap-icons.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/phosphor-icons.min.css') }}">
     <script type="text/javascript" src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 </head>
 
-<body class="m-0">
-    <div class="vh-100 m-0">
-        <img src="{{ asset('images/Logistics/error-403-forbbiden.png') }}" class="object-fit-cover w-100 h-100" alt="">
+<body class='bg-light'>
+    <div class="d-flex align-items-center justify-content-center vh-100">
+        <div class="text-center p-4">
+            <div class="display-1 text-danger fw-bold mb-3">403</div>
+            <div class="h3 text-dark mb-4">
+                FORBIDDEN - Giriş Ýatyrylan
+            </div>
+            <p class="lead text-muted">Bu sahypany görmäge rugsat ýok.</p>
+            <a href="{{ route('home') }}" class="btn btn-outline-primary mt-3">Baş Sahypa Gaýt</a>
+        </div>
     </div>
 </body>
-
 </html>

@@ -23,7 +23,7 @@ class PostFactory extends Factory
      */
     public function definition(): array
     {
-        $userId = User::inRandomOrder()->first();
+        $userId = User::inRandomOrder()->first();  $userId = User::inRandomOrder()->first();
         $categoryId = Category::inRandomOrder()->first();
         $viewCount = fake()->numberBetween(0, 1000);
         return[

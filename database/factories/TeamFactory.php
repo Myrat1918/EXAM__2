@@ -27,11 +27,11 @@ class TeamFactory extends Factory
         $city = fake()->city;
 
         return [
-            'name' =>fake()->unique()->company, // Generates a unique, realistic-sounding name (e.g., 'Osinski Group')
+            'name' =>fake()->unique()->company, 
             'city' => $city,
             'country' =>fake()->country,
-            'manager_name' =>fake()->name, // Generates a full name for the manager
-            'stadium_name' =>fake()->optional()->city . ' Stadium', // Makes this nullable sometimes
+            'manager_name' =>fake()->name,
+            'stadium_name' =>fake()->optional()->city . ' Stadium',
             'description' => fake()->paragraph()
         ];
     }

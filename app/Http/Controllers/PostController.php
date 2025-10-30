@@ -3,19 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
-use App\Models\Category; // Kategoriýalary ulanmak üçin
+use App\Models\Category; 
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
-    // Diňe giren ulanyjylar üçin
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
-    // Täzelikleriň sanawy (INDEX)
+
     public function index()
     {
         $posts = Post::with('category')->latest()->paginate(15);
@@ -23,11 +18,6 @@ class PostController extends Controller
     }
 
 
-    public function create()
-    {
-        $categories = Category::all();
-        return view('posts.create', compact('categories'));
-    }
 
 
     public function store(Request $request)

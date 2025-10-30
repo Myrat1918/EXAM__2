@@ -3,37 +3,45 @@
 @section('title', 'Admin Giriş')
 
 @section('content')
-    <div class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-xl mt-10">
-        <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Admin Panel Giriş</h2>
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="card shadow-lg p-4">
+                    <h2 class="card-title text-center text-primary fw-bold mb-4">User Panel giris</h2>
 
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
+                    <form method="POST" action="{{ route('login') }}">
+                        @csrf
 
-            <div class="mb-4">
-                <label for="email" class="block text-gray-700 text-sm font-semibold mb-2">Email salgyňyz</label>
-                <input type="email" id="email" name="email" required autofocus
-                       class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 @error('email') border-red-500 @enderror">
-                @error('email')
-                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-                @enderror
+                        <div class="mb-3">
+                            <label for="email" class="form-label fw-semibold">Username salgyňyz</label>
+                            <input type="email" id="email" name="email" required autofocus
+                                   class="form-control @error('email') is-invalid @enderror">
+                            @error('email')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="password" class="form-label fw-semibold">Parol</label>
+                            <input type="password" id="password" name="password" required
+                                   class="form-control @error('password') is-invalid @enderror">
+                            @error('password')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="d-grid gap-2 mb-3">
+                            <button type="submit" class="btn btn-primary fw-bold">
+                                Giriň
+                            </button>
+                        </div>
+
+                        <p class="text-center text-muted mt-3">
+                            Hasabyňyz ýokmy? <a href="{{ route('register') }}" class="text-decoration-none fw-semibold">Hasaba duruň</a>
+                        </p>
+                    </form>
+                </div>
             </div>
-
-            <div class="mb-6">
-                <label for="password" class="block text-gray-700 text-sm font-semibold mb-2">Parol</label>
-                <input type="password" id="password" name="password" required
-                       class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 @error('password') border-red-500 @enderror">
-                @error('password')
-                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-                @enderror
-            </div>
-
-            <button type="submit" class="w-full bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300">
-                Giriň
-            </button>
-
-            <p class="text-center text-sm mt-4 text-gray-600">
-                Hasabyňyz ýokmy? <a href="{{ route('register') }}" class="text-blue-600 hover:underline">Hasaba duruň</a>
-            </p>
-        </form>
+        </div>
     </div>
 @endsection

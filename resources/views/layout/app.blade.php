@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     @php
 
-    $bgImage = asset('images/bg-main.jpg');
+    $bgImage = asset('images/bg.jpg');
     @endphp
 
 
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 </head>
 
-<body class="bg-dark text-white">
+<body class="{{ $bgImage }} text-white">
     @include('nav.nav')
 
     <main class="container-lg mx-auto mt-5 px-4 bg-white p-4 p-md-5 rounded shadow-lg">

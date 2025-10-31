@@ -3,7 +3,7 @@
 @section('title', 'Tazelikler')
 
 @section('content')
-<div class="row row-cols-2">
+<div class="row row-cols-1">
     @foreach ($posts as $post)
         <div class="col ">
             <div class="card shadow-lg p-4 p-md-5 mb-5 bg-white">
